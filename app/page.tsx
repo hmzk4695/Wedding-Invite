@@ -5,9 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 
 // --- WEDDING CONFIGURATION ---
 const WEDDING_DATA = {
-  bride: "Fatima",
   groom: "Usman",
-  parents: "Mr. & Mrs. Khan",
+  bride: "Fatima",
+  parents: {
+    father: "Muhammad Yousuf Khan",
+    mother: "Kishwer Jahan",
+  },
   dateISO: "2026-12-25T17:00:00",
   displayDate: "Friday, December 25, 2026",
   hijriDate: "15 Jumada al-Thani 1448 AH",
@@ -22,7 +25,7 @@ const WEDDING_DATA = {
   musicUrl: "/music.mp3",
 
   quranVerseArabic: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
-  quranVerseEnglish: "“And among His signs is that He created for you mates from among yourselves, that you may find peace in them; and He placed between you affection and mercy.”",
+  quranVerseEnglish: "“And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy.”",
   surahRef: "Surah Ar-Rum • 30:21",
 
   itinerary: [
@@ -121,7 +124,7 @@ const LuxuryRoyalBackground = () => (
   </div>
 );
 
-// High-End Gold Wax Seal on Curtain Seam
+// High-End Gold Wax Seal on Curtain Seam (U&F)
 const CurtainGoldMedallion = () => (
   <div className="relative flex items-center justify-center select-none">
     {/* Outer Glow */}
@@ -131,7 +134,7 @@ const CurtainGoldMedallion = () => (
     <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#fae5a8] via-[#cca244] to-[#785412] shadow-[0_12px_35px_rgba(0,0,0,0.5),0_0_20px_rgba(212,175,55,0.6)] flex items-center justify-center p-2 border-2 border-[#fff8e7]">
       <div className="w-full h-full rounded-full border-2 border-[#fcedbf]/70 flex flex-col items-center justify-center shadow-[inset_0_3px_10px_rgba(70,45,5,0.5)] bg-gradient-to-tr from-[#9c751e] via-[#c99d3e] to-[#e4bc5c]">
         <span className="font-serif text-xl font-bold tracking-widest text-[#241702] drop-shadow-[0_1px_1px_rgba(255,245,215,0.7)]">
-          F&amp;U
+          U&amp;F
         </span>
         <span className="text-[7px] uppercase tracking-[0.35em] font-extrabold text-[#382606] -mt-0.5">
           NIKKAH
@@ -184,8 +187,8 @@ export default function RoyalCurtainNikkahInvite() {
   };
 
   const getGoogleCalendarUrl = () => {
-    const title = encodeURIComponent(`Nikkah Ceremony of ${WEDDING_DATA.bride} & ${WEDDING_DATA.groom}`);
-    const details = encodeURIComponent(`You are cordially invited to celebrate the Nikkah ceremony of ${WEDDING_DATA.bride} & ${WEDDING_DATA.groom}.`);
+    const title = encodeURIComponent(`Nikkah Ceremony of ${WEDDING_DATA.groom} & ${WEDDING_DATA.bride}`);
+    const details = encodeURIComponent(`You are cordially invited to celebrate the Nikkah ceremony of ${WEDDING_DATA.groom} & ${WEDDING_DATA.bride}.`);
     const loc = encodeURIComponent(`${WEDDING_DATA.location.name}, ${WEDDING_DATA.location.address}`);
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20261225T120000Z/20261225T160000Z&details=${details}&location=${loc}`;
   };
@@ -219,7 +222,7 @@ export default function RoyalCurtainNikkahInvite() {
               >
                 <div className="h-full flex items-center justify-end pr-3 opacity-30">
                   <span className="text-[10px] uppercase tracking-[0.55em] text-[#7a5818] [writing-mode:vertical-rl] rotate-180 font-serif font-bold">
-                    Fatima &amp; Usman
+                    Usman &amp; Fatima
                   </span>
                 </div>
               </motion.div>
@@ -244,13 +247,13 @@ export default function RoyalCurtainNikkahInvite() {
                 exit={{ opacity: 0, scale: 0.85, transition: { duration: 0.4 } }}
                 className="absolute inset-0 z-30 flex flex-col items-center justify-between py-10 px-6 pointer-events-none"
               >
-                {/* Top Bismillah */}
+                {/* Top Bismillah with extended breathing gap */}
                 <div className="pt-4 text-center">
-                  <span className="font-arabic text-[#8f681a] text-3xl font-bold block drop-shadow-md">
+                  <span className="font-arabic text-[#8f681a] text-3xl sm:text-4xl font-bold block drop-shadow-md">
                     بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
                   </span>
-                  <p className="text-[10px] uppercase tracking-[0.45em] text-[#6e5015] mt-2 font-bold">
-                    The Wedding Celebration
+                  <p className="text-[10px] uppercase tracking-[0.45em] text-[#6e5015] font-bold mt-5">
+                    Nikkah Ceremony
                   </p>
                 </div>
 
@@ -260,7 +263,7 @@ export default function RoyalCurtainNikkahInvite() {
                   
                   <div className="pt-2">
                     <h2 className="text-2xl font-serif text-[#291e0a] tracking-widest font-bold">
-                      {WEDDING_DATA.bride} <span className="font-script text-3xl text-[#9c751e]">&amp;</span> {WEDDING_DATA.groom}
+                      {WEDDING_DATA.groom} <span className="font-script text-3xl text-[#9c751e]">&amp;</span> {WEDDING_DATA.bride}
                     </h2>
                     <p className="text-[10px] uppercase tracking-[0.3em] text-[#705218] mt-1 font-semibold">
                       Friday • 25 Dec 2026
@@ -311,34 +314,45 @@ export default function RoyalCurtainNikkahInvite() {
           <div className="w-full h-full overflow-y-auto snap-container scrollbar-none">
 
             {/* -------------------------------------------------------------
-                PAGE SLIDE 1: HERO & ROTATING ARCH (BOTANICAL BACKDROP)
+                PAGE SLIDE 1: HERO & ROTATING ARCH (USMAN & FATIMA)
                 ------------------------------------------------------------- */}
             <section className="w-full snap-card flex flex-col items-center justify-between py-6 px-4 relative bg-[#faf6ee] text-center overflow-hidden">
               <LuxuryRoyalBackground />
 
-              {/* Header */}
+              {/* Header with Substantial Gap Below Bismillah */}
               <motion.div 
                 initial={{ y: -15, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8 }}
-                className="space-y-1 pt-1 z-10"
+                className="pt-2 z-10"
               >
+                {/* Bismillah Calligraphy */}
                 <span className="font-arabic text-3xl sm:text-4xl text-[#a87d27] block font-bold leading-tight drop-shadow-[0_1px_3px_rgba(168,125,39,0.25)]">
                   بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
                 </span>
 
-                <div className="space-y-0.5 pt-0.5">
-                  <p className="text-[11px] uppercase tracking-[0.32em] text-[#7a6850] font-semibold">
-                    {WEDDING_DATA.parents}
+                {/* Announcement Lines with 3-Line Parents Layout */}
+                <div className="mt-4 sm:mt-5 flex flex-col items-center">
+                  <p className="text-[11px] sm:text-xs uppercase tracking-[0.28em] text-[#7a6850] font-semibold">
+                    {WEDDING_DATA.parents.father}
                   </p>
-                  <p className="text-[8.5px] uppercase tracking-[0.25em] text-[#a07c30] font-semibold">
+                  
+                  <span className="font-script text-base sm:text-lg text-[#b88c34] my-[-2px] select-none">
+                    &amp;
+                  </span>
+                  
+                  <p className="text-[11px] sm:text-xs uppercase tracking-[0.28em] text-[#7a6850] font-semibold">
+                    {WEDDING_DATA.parents.mother}
+                  </p>
+                  
+                  <p className="text-[8.5px] uppercase tracking-[0.25em] text-[#a07c30] font-semibold mt-2">
                     Cordially request the pleasure of your company at the Nikkah of
                   </p>
                 </div>
               </motion.div>
 
               {/* Arch Container */}
-              <div className="relative w-full max-w-[360px] h-[360px] my-auto flex items-center justify-center z-10 -my-2">
+              <div className="relative w-full max-w-[340px] h-[340px] my-auto flex items-center justify-center z-10 -my-2">
                 
                 {/* Fallback Vector Ring */}
                 <svg 
@@ -373,7 +387,7 @@ export default function RoyalCurtainNikkahInvite() {
                   onError={(e) => { (e.currentTarget as HTMLElement).style.display = "none"; }}
                 />
 
-                {/* Refined Couple Names */}
+                {/* Refined Couple Names (Usman & Fatima) */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -381,7 +395,7 @@ export default function RoyalCurtainNikkahInvite() {
                   className="relative z-10 flex flex-col items-center justify-center px-4"
                 >
                   <h1 className="text-lg sm:text-xl font-serif font-semibold tracking-[0.28em] uppercase bg-gradient-to-b from-[#1b2b20] via-[#2f4234] to-[#121c15] bg-clip-text text-transparent drop-shadow-sm">
-                    {WEDDING_DATA.bride}
+                    {WEDDING_DATA.groom}
                   </h1>
                   
                   <span className="font-script text-xl sm:text-2xl text-[#b88c34] my-[-3px] drop-shadow-sm select-none">
@@ -389,24 +403,35 @@ export default function RoyalCurtainNikkahInvite() {
                   </span>
                   
                   <h1 className="text-lg sm:text-xl font-serif font-semibold tracking-[0.28em] uppercase bg-gradient-to-b from-[#1b2b20] via-[#2f4234] to-[#121c15] bg-clip-text text-transparent drop-shadow-sm">
-                    {WEDDING_DATA.groom}
+                    {WEDDING_DATA.bride}
                   </h1>
                 </motion.div>
               </div>
 
-              {/* Bottom Quran Card */}
+              {/* Bottom Quran Card with Refined & Scaled-Down Typography */}
               <motion.div 
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
                 className="w-full max-w-[310px] z-10 pb-1"
               >
-                <div className="p-3 rounded-lg bg-[#ffffff]/95 border-2 border-[#e2d0a8] shadow-md space-y-1 backdrop-blur-[2px]">
+                <div className="p-3 rounded-lg bg-[#ffffff]/95 border border-[#e2d0a8] shadow-sm space-y-1.5 backdrop-blur-[2px]">
+                  {/* Arabic Ayat (Scaled down & elegant) */}
                   <p className="font-arabic text-xs sm:text-[13px] text-[#8f681c] font-bold leading-relaxed" dir="rtl">
                     {WEDDING_DATA.quranVerseArabic}
                   </p>
-                  <span className="text-[7.5px] uppercase tracking-widest text-[#a07c30] block font-mono font-semibold">
-                    — {WEDDING_DATA.surahRef}
+
+                  {/* Subtle Gold Divider */}
+                  <div className="w-10 h-[1px] bg-gradient-to-r from-transparent via-[#c59e47] to-transparent mx-auto opacity-70" />
+
+                  {/* English Translation (Scaled down & proportionate) */}
+                  <p className="text-[9.5px] sm:text-[10px] text-[#4a3b2c] font-serif tracking-wide leading-relaxed font-medium px-1">
+                    {WEDDING_DATA.quranVerseEnglish}
+                  </p>
+
+                  {/* Reference */}
+                  <span className="text-[7.5px] uppercase tracking-[0.25em] text-[#a07c30] block font-mono font-semibold pt-0.5">
+                    — {WEDDING_DATA.surahRef} —
                   </span>
                 </div>
 
@@ -521,7 +546,7 @@ export default function RoyalCurtainNikkahInvite() {
                 className="space-y-3.5 w-full max-w-xs z-10 my-auto"
               >
                 <a
-                  href={`https://wa.me/${WEDDING_DATA.whatsappNumber.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(`Barakallahu lakuma! Warm congratulations Fatima & Usman on your Nikkah! 🎉`)}`}
+                  href={`https://wa.me/${WEDDING_DATA.whatsappNumber.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(`Barakallahu lakuma! Warm congratulations Usman & Fatima on your Nikkah! 🎉`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-4 px-6 rounded-full border-2 border-[#25D366]/50 bg-[#ffffff]/95 text-[#128C7E] text-xs uppercase tracking-widest font-semibold shadow-md flex items-center justify-center gap-2 hover:bg-[#f0fbf5] transition-colors"
@@ -541,7 +566,7 @@ export default function RoyalCurtainNikkahInvite() {
               </motion.div>
 
               <footer className="pb-2 space-y-0.5 z-10">
-                <p className="font-serif text-[#7d5e1e] text-sm tracking-widest font-semibold">Fatima &amp; Usman</p>
+                <p className="font-serif text-[#7d5e1e] text-sm tracking-widest font-semibold">Usman &amp; Fatima</p>
                 <p className="text-[9px] tracking-[0.35em] text-[#80705a] uppercase font-medium">25 • 12 • 2026</p>
               </footer>
             </section>
