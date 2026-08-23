@@ -18,6 +18,7 @@ const WEDDING_DATA = {
     mapLink: "https://share.google/xRvJ2S7T7uqPUmNWV",
   },
   
+  // Uses your downloaded audio file in public/music.mp3
   musicUrl: "/music.mp3",
 
   quranVerseArabic: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
@@ -156,7 +157,7 @@ export default function RoyalCurtainNikkahInvite() {
           days: Math.floor(diff / (1000 * 60 * 60 * 24)),
           hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
           minutes: Math.floor((diff % (1000 * 60)) / (1000 * 60)),
-          seconds: Math.floor((diff % (1000 * 60)) / (1000 * 60)),
+          seconds: Math.floor((diff % (1000 * 60)) / 1000),
         });
       }
     }, 1000);
@@ -190,12 +191,13 @@ export default function RoyalCurtainNikkahInvite() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#14100c] flex items-center justify-center text-[#2b241b] antialiased selection:bg-[#c59e47]/30">
+    <div className="fixed inset-0 w-full h-full bg-[#faf6ee] flex justify-center overflow-hidden text-[#2b241b] antialiased selection:bg-[#c59e47]/30">
       
+      {/* Background Audio */}
       <audio ref={audioRef} src={WEDDING_DATA.musicUrl} preload="auto" loop />
 
       {/* Main Stage Frame */}
-      <main className="relative z-10 w-full max-w-[440px] h-[100dvh] bg-[#faf6ee] shadow-[0_25px_80px_rgba(0,0,0,0.85)] overflow-hidden border-2 border-[#c59e47]/60">
+      <main className="relative w-full max-w-[440px] h-full bg-[#faf6ee] overflow-hidden sm:border-x sm:border-[#c59e47]/40 shadow-2xl">
 
         {/* =========================================================================
             PHASE 1: THE GRAND ROYAL CURTAINS (100% OPAQUE & LEAK-PROOF)
@@ -240,10 +242,10 @@ export default function RoyalCurtainNikkahInvite() {
               {/* Center Content on Top of Curtains */}
               <motion.div 
                 exit={{ opacity: 0, scale: 0.85, transition: { duration: 0.4 } }}
-                className="absolute inset-0 z-30 flex flex-col items-center justify-between p-8 pointer-events-none"
+                className="absolute inset-0 z-30 flex flex-col items-center justify-between py-10 px-6 pointer-events-none"
               >
                 {/* Top Bismillah */}
-                <div className="pt-6 text-center">
+                <div className="pt-4 text-center">
                   <span className="font-arabic text-[#8f681a] text-3xl font-bold block drop-shadow-md">
                     بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
                   </span>
@@ -252,7 +254,7 @@ export default function RoyalCurtainNikkahInvite() {
                   </p>
                 </div>
 
-                {/* Center Seal */}
+                {/* Center Seal & Title */}
                 <div className="my-auto text-center space-y-4">
                   <CurtainGoldMedallion />
                   
@@ -287,6 +289,7 @@ export default function RoyalCurtainNikkahInvite() {
             PHASE 2: FULLSCREEN STORYBOOK INVITATION (BEHIND CURTAINS)
             ========================================================================= */}
         <div className="relative w-full h-full">
+          
           {/* Floating Audio Control */}
           <button 
             onClick={toggleMusic}
@@ -310,7 +313,7 @@ export default function RoyalCurtainNikkahInvite() {
             {/* -------------------------------------------------------------
                 PAGE SLIDE 1: HERO & ROTATING ARCH (BOTANICAL BACKDROP)
                 ------------------------------------------------------------- */}
-            <section className="w-full h-[100dvh] snap-card flex flex-col items-center justify-between py-8 px-4 relative bg-[#faf6ee] text-center overflow-hidden">
+            <section className="w-full snap-card flex flex-col items-center justify-between py-6 px-4 relative bg-[#faf6ee] text-center overflow-hidden">
               <LuxuryRoyalBackground />
 
               {/* Header */}
@@ -318,7 +321,7 @@ export default function RoyalCurtainNikkahInvite() {
                 initial={{ y: -15, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8 }}
-                className="space-y-1.5 pt-2 z-10"
+                className="space-y-1 pt-1 z-10"
               >
                 <span className="font-arabic text-3xl sm:text-4xl text-[#a87d27] block font-bold leading-tight drop-shadow-[0_1px_3px_rgba(168,125,39,0.25)]">
                   بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
@@ -335,12 +338,29 @@ export default function RoyalCurtainNikkahInvite() {
               </motion.div>
 
               {/* Arch Container */}
-              <div className="relative w-full max-w-[370px] h-[370px] my-auto flex items-center justify-center z-10 -my-2">
+              <div className="relative w-full max-w-[360px] h-[360px] my-auto flex items-center justify-center z-10 -my-2">
                 
-                {/* Floating Botanical Wreath (Clean Slow Rotation) */}
+                {/* Fallback Vector Ring */}
+                <svg 
+                  className="absolute inset-0 w-full h-full text-[#527357]/20 pointer-events-none" 
+                  viewBox="0 0 200 200" 
+                  fill="currentColor"
+                >
+                  <circle cx="100" cy="100" r="88" fill="none" stroke="#d4af37" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.6" />
+                  <circle cx="100" cy="100" r="80" fill="none" stroke="#d4af37" strokeWidth="1" opacity="0.4" />
+                  {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, idx) => (
+                    <g key={idx} transform={`rotate(${angle} 100 100)`}>
+                      <path d="M100,12 C106,6 114,14 108,22 C102,24 94,18 100,12 Z" />
+                      <path d="M100,14 C94,8 86,16 92,24 C98,26 106,20 100,14 Z" fill="#d4af37" fillOpacity="0.7" />
+                      <circle cx="100" cy="18" r="2.5" fill="#ffffff" stroke="#d4af37" strokeWidth="0.5" />
+                    </g>
+                  ))}
+                </svg>
+
+                {/* Floating Botanical Wreath PNG */}
                 <motion.img 
                   src="/arch.png" 
-                  alt="Floral Wreath Arch"
+                  alt=""
                   animate={{ 
                     rotate: [0, 360],
                     scale: [1, 1.015, 1]
@@ -350,7 +370,7 @@ export default function RoyalCurtainNikkahInvite() {
                     scale: { duration: 6, repeat: Infinity, ease: "easeInOut" }
                   }}
                   className="absolute inset-0 w-full h-full object-contain pointer-events-none drop-shadow-[0_10px_25px_rgba(197,158,71,0.25)]"
-                  onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }}
+                  onError={(e) => { (e.currentTarget as HTMLElement).style.display = "none"; }}
                 />
 
                 {/* Refined Couple Names */}
@@ -379,7 +399,7 @@ export default function RoyalCurtainNikkahInvite() {
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-                className="w-full max-w-[310px] z-10"
+                className="w-full max-w-[310px] z-10 pb-1"
               >
                 <div className="p-3 rounded-lg bg-[#ffffff]/95 border-2 border-[#e2d0a8] shadow-md space-y-1 backdrop-blur-[2px]">
                   <p className="font-arabic text-xs sm:text-[13px] text-[#8f681c] font-bold leading-relaxed" dir="rtl">
@@ -400,11 +420,11 @@ export default function RoyalCurtainNikkahInvite() {
             {/* -------------------------------------------------------------
                 PAGE SLIDE 2: COUNTDOWN & EVENT DATE
                 ------------------------------------------------------------- */}
-            <section className="w-full h-[100dvh] snap-card flex flex-col items-center justify-between p-8 bg-[#faf6ee] text-center relative overflow-hidden">
+            <section className="w-full snap-card flex flex-col items-center justify-between p-6 sm:p-8 bg-[#faf6ee] text-center relative overflow-hidden">
               <LuxuryRoyalBackground />
 
-              <div className="pt-8 z-10">
-                <span className="text-[9px] uppercase tracking-[0.35em] text-[#8e7132] font-semibold block mb-2">When &amp; Where</span>
+              <div className="pt-4 z-10">
+                <span className="text-[9px] uppercase tracking-[0.35em] text-[#8e7132] font-semibold block mb-1">When &amp; Where</span>
                 <h3 className="text-3xl font-serif text-[#292015] font-semibold">{WEDDING_DATA.displayDate}</h3>
                 <p className="text-xs text-[#5e513e] mt-1 font-light">{WEDDING_DATA.time}</p>
               </div>
@@ -413,7 +433,7 @@ export default function RoyalCurtainNikkahInvite() {
                 initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8 }}
-                className="w-full max-w-xs space-y-4 z-10"
+                className="w-full max-w-xs space-y-3 z-10 my-auto"
               >
                 <span className="text-[9px] uppercase tracking-[0.3em] text-[#9c7b37] font-semibold block">Counting Down</span>
                 <div className="grid grid-cols-4 gap-2.5">
@@ -427,8 +447,8 @@ export default function RoyalCurtainNikkahInvite() {
                 <p className="text-[10px] text-[#73634e] tracking-widest font-mono font-medium">{WEDDING_DATA.hijriDate}</p>
               </motion.div>
 
-              <div className="w-full max-w-xs space-y-3 pb-4 z-10">
-                <div className="p-4 rounded-lg bg-[#ffffff]/95 border-2 border-[#e2d0a8] shadow-sm backdrop-blur-[1px]">
+              <div className="w-full max-w-xs space-y-3 pb-2 z-10">
+                <div className="p-3.5 rounded-lg bg-[#ffffff]/95 border-2 border-[#e2d0a8] shadow-sm backdrop-blur-[1px]">
                   <h4 className="text-base font-serif text-[#292015] font-semibold">{WEDDING_DATA.location.name}</h4>
                   <p className="text-xs text-[#70614e] mt-0.5">{WEDDING_DATA.location.address}</p>
                 </div>
@@ -447,16 +467,16 @@ export default function RoyalCurtainNikkahInvite() {
             {/* -------------------------------------------------------------
                 PAGE SLIDE 3: ITINERARY TIMELINE
                 ------------------------------------------------------------- */}
-            <section className="w-full h-[100dvh] snap-card flex flex-col items-center justify-center p-6 bg-[#faf6ee] relative overflow-hidden">
+            <section className="w-full snap-card flex flex-col items-center justify-center p-6 bg-[#faf6ee] relative overflow-hidden">
               <LuxuryRoyalBackground />
 
-              <div className="w-full max-w-xs space-y-6 z-10">
+              <div className="w-full max-w-xs space-y-5 z-10">
                 <div className="text-center">
                   <span className="text-[9px] uppercase tracking-[0.35em] text-[#8e7132] font-semibold block">Program Schedule</span>
                   <h3 className="text-2xl font-serif text-[#292015] font-semibold mt-1">The Order of Events</h3>
                 </div>
 
-                <div className="relative pl-6 border-l-2 border-[#c59e47]/60 space-y-5 ml-2">
+                <div className="relative pl-6 border-l-2 border-[#c59e47]/60 space-y-4 ml-2">
                   {WEDDING_DATA.itinerary.map((item, idx) => (
                     <motion.div 
                       key={idx}
@@ -483,10 +503,10 @@ export default function RoyalCurtainNikkahInvite() {
             {/* -------------------------------------------------------------
                 PAGE SLIDE 4: PRAYERS & WHATSAPP
                 ------------------------------------------------------------- */}
-            <section className="w-full h-[100dvh] snap-card flex flex-col items-center justify-between p-8 bg-[#faf6ee] text-center relative overflow-hidden">
+            <section className="w-full snap-card flex flex-col items-center justify-between p-6 sm:p-8 bg-[#faf6ee] text-center relative overflow-hidden">
               <LuxuryRoyalBackground />
 
-              <div className="pt-12 space-y-2 z-10">
+              <div className="pt-6 space-y-2 z-10">
                 <span className="text-[9px] uppercase tracking-[0.35em] text-[#8e7132] font-semibold block">Prayers &amp; Gratitude</span>
                 <h3 className="text-2xl font-serif text-[#292015] font-semibold">Your Du'as Are Our Greatest Gift</h3>
                 <p className="text-xs text-[#63533e] max-w-xs mx-auto leading-relaxed pt-2">
@@ -498,7 +518,7 @@ export default function RoyalCurtainNikkahInvite() {
                 initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.6 }}
-                className="space-y-4 w-full max-w-xs z-10"
+                className="space-y-3.5 w-full max-w-xs z-10 my-auto"
               >
                 <a
                   href={`https://wa.me/${WEDDING_DATA.whatsappNumber.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(`Barakallahu lakuma! Warm congratulations Fatima & Usman on your Nikkah! 🎉`)}`}
@@ -520,7 +540,7 @@ export default function RoyalCurtainNikkahInvite() {
                 </a>
               </motion.div>
 
-              <footer className="pb-4 space-y-1 z-10">
+              <footer className="pb-2 space-y-0.5 z-10">
                 <p className="font-serif text-[#7d5e1e] text-sm tracking-widest font-semibold">Fatima &amp; Usman</p>
                 <p className="text-[9px] tracking-[0.35em] text-[#80705a] uppercase font-medium">25 • 12 • 2026</p>
               </footer>
