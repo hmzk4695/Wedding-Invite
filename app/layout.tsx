@@ -25,12 +25,12 @@ const amiri = Amiri({
 });
 
 export const metadata: Metadata = {
-  title: "Usman & Fatima | Royal Nikkah Invitation",
+  title: "Usman & Fatima | Nikkah Invitation",
   description: "You are cordially invited to celebrate the Nikkah ceremony of Usman & Fatima.",
   openGraph: {
     title: "Usman & Fatima's Nikkah Invitation",
     description: "Friday, December 25, 2026 at Civil Aviation Club, Karachi.",
-    url: "https://your-vercel-link.vercel.app",
+    url: "https://usman-fatima-nikkah.vercel.app",
     siteName: "Wedding Invitation",
     images: [
       {
