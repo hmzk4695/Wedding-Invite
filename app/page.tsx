@@ -21,8 +21,8 @@ const WEDDING_DATA = {
     mapLink: "https://share.google/xRvJ2S7T7uqPUmNWV",
   },
   
-  // Uses your downloaded audio file in public/music.mp3
   musicUrl: "/music.mp3",
+  logoUrl: "/logo.png", // Your transparent logo in public/
 
   quranVerseArabic: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
   quranVerseEnglish: "“And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy.”",
@@ -38,10 +38,9 @@ const WEDDING_DATA = {
   whatsappNumber: "+923212124555"
 };
 
-// Rich Botanical Background Frame for Invitation Slides
+// Rich Botanical Background Frame for Invitation Slides & Cover
 const LuxuryRoyalBackground = () => (
   <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 select-none">
-    {/* Floating Golden Dust Particles */}
     {[...Array(8)].map((_, i) => (
       <motion.div
         key={i}
@@ -65,7 +64,6 @@ const LuxuryRoyalBackground = () => (
       />
     ))}
 
-    {/* Top-Left Botanical Branch */}
     <svg className="absolute -top-3 -left-3 w-36 h-36 text-[#4a6b4d]/25" viewBox="0 0 140 140" fill="currentColor">
       <path d="M0,0 Q60,15 95,95 Q15,60 0,0 Z" fillOpacity="0.12" />
       <path d="M0,0 C30,10 60,35 85,85" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -77,7 +75,6 @@ const LuxuryRoyalBackground = () => (
       <circle cx="18" cy="42" r="3" fill="#d4af37" fillOpacity="0.9" />
     </svg>
 
-    {/* Top-Right Botanical Branch */}
     <svg className="absolute -top-3 -right-3 w-36 h-36 text-[#4a6b4d]/25 -scale-x-100" viewBox="0 0 140 140" fill="currentColor">
       <path d="M0,0 Q60,15 95,95 Q15,60 0,0 Z" fillOpacity="0.12" />
       <path d="M0,0 C30,10 60,35 85,85" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -89,7 +86,6 @@ const LuxuryRoyalBackground = () => (
       <circle cx="18" cy="42" r="3" fill="#d4af37" fillOpacity="0.9" />
     </svg>
 
-    {/* Bottom-Left Botanical Branch */}
     <svg className="absolute -bottom-3 -left-3 w-36 h-36 text-[#4a6b4d]/25 -scale-y-100" viewBox="0 0 140 140" fill="currentColor">
       <path d="M0,0 Q60,15 95,95 Q15,60 0,0 Z" fillOpacity="0.12" />
       <path d="M0,0 C30,10 60,35 85,85" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -99,7 +95,6 @@ const LuxuryRoyalBackground = () => (
       <circle cx="18" cy="42" r="3" fill="#d4af37" fillOpacity="0.9" />
     </svg>
 
-    {/* Bottom-Right Botanical Branch */}
     <svg className="absolute -bottom-3 -right-3 w-36 h-36 text-[#4a6b4d]/25 -scale-x-100 -scale-y-100" viewBox="0 0 140 140" fill="currentColor">
       <path d="M0,0 Q60,15 95,95 Q15,60 0,0 Z" fillOpacity="0.12" />
       <path d="M0,0 C30,10 60,35 85,85" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -109,7 +104,6 @@ const LuxuryRoyalBackground = () => (
       <circle cx="18" cy="42" r="3" fill="#d4af37" fillOpacity="0.9" />
     </svg>
 
-    {/* Center Arabesque Watermark */}
     <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 text-[#c59e47]/15 pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor">
       <circle cx="50" cy="50" r="48" strokeWidth="1" strokeDasharray="3 3" />
       <circle cx="50" cy="50" r="40" strokeWidth="1.2" />
@@ -118,28 +112,21 @@ const LuxuryRoyalBackground = () => (
       <circle cx="50" cy="50" r="9" strokeWidth="1" />
     </svg>
 
-    {/* Gold Perimeter Frame */}
     <div className="absolute inset-2 border-2 border-[#c59e47]/70 pointer-events-none rounded-sm shadow-[inset_0_0_15px_rgba(197,158,71,0.15)]" />
     <div className="absolute inset-3.5 border border-[#c59e47]/40 pointer-events-none rounded-sm" />
   </div>
 );
 
-// High-End Gold Wax Seal on Curtain Seam (U&F)
-const CurtainGoldMedallion = () => (
-  <div className="relative flex items-center justify-center select-none">
-    {/* Outer Glow */}
-    <div className="absolute w-28 h-28 rounded-full bg-[#d4af37]/25 blur-xl animate-pulse" />
-    
-    {/* Outer Wax Edge with Metallic Shimmer */}
-    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#fae5a8] via-[#cca244] to-[#785412] shadow-[0_12px_35px_rgba(0,0,0,0.5),0_0_20px_rgba(212,175,55,0.6)] flex items-center justify-center p-2 border-2 border-[#fff8e7]">
-      <div className="w-full h-full rounded-full border-2 border-[#fcedbf]/70 flex flex-col items-center justify-center shadow-[inset_0_3px_10px_rgba(70,45,5,0.5)] bg-gradient-to-tr from-[#9c751e] via-[#c99d3e] to-[#e4bc5c]">
-        <span className="font-serif text-xl font-bold tracking-widest text-[#241702] drop-shadow-[0_1px_1px_rgba(255,245,215,0.7)]">
-          U&amp;F
-        </span>
-        <span className="text-[7px] uppercase tracking-[0.35em] font-extrabold text-[#382606] -mt-0.5">
-          NIKKAH
-        </span>
-      </div>
+// Clean Floating Logo Component
+const CleanFloatingLogo = () => (
+  <div className="relative flex items-center justify-center select-none my-auto">
+    <div className="absolute w-64 h-64 rounded-full bg-gradient-to-tr from-[#d4af37]/20 to-[#fae09c]/30 blur-3xl pointer-events-none animate-pulse" />
+    <div className="relative w-52 h-52 sm:w-60 sm:h-60 flex items-center justify-center">
+      <img
+        src={WEDDING_DATA.logoUrl}
+        alt="Usman & Fatima Logo"
+        className="w-full h-full object-contain drop-shadow-[0_15px_35px_rgba(90,65,15,0.35)]"
+      />
     </div>
   </div>
 );
@@ -159,7 +146,7 @@ export default function RoyalCurtainNikkahInvite() {
         setTimeLeft({
           days: Math.floor(diff / (1000 * 60 * 60 * 24)),
           hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((diff % (1000 * 60)) / (1000 * 60)),
+          minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((diff % (1000 * 60)) / 1000),
         });
       }
@@ -196,92 +183,140 @@ export default function RoyalCurtainNikkahInvite() {
   return (
     <div className="fixed inset-0 w-full h-full bg-[#faf6ee] flex justify-center overflow-hidden text-[#2b241b] antialiased selection:bg-[#c59e47]/30">
       
-      {/* Background Audio */}
       <audio ref={audioRef} src={WEDDING_DATA.musicUrl} preload="auto" loop />
 
-      {/* Main Stage Frame */}
       <main className="relative w-full max-w-[440px] h-full bg-[#faf6ee] overflow-hidden sm:border-x sm:border-[#c59e47]/40 shadow-2xl">
 
         {/* =========================================================================
-            PHASE 1: THE GRAND ROYAL CURTAINS (100% OPAQUE & LEAK-PROOF)
+            PHASE 1: MATCHING BOTANICAL COVER SCREEN (DOUBLE-PAGE ENVELOPE GATEFOLD)
             ========================================================================= */}
         <AnimatePresence>
           {!isOpen && (
             <motion.div
               key="curtains"
               onClick={handleOpenCurtains}
-              className="absolute inset-0 z-50 overflow-hidden cursor-pointer select-none"
+              className="absolute inset-0 z-50 overflow-hidden cursor-pointer select-none bg-[#faf6ee]"
             >
-              {/* Left Royal Curtain */}
+              {/* Left Sliding Panel (Left Envelope Flap) */}
               <motion.div
                 initial={{ x: "0%" }}
                 animate={{ x: isOpen ? "-100%" : "0%" }}
                 exit={{ x: "-100%" }}
-                transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                className="absolute top-0 left-0 bottom-0 w-1/2 bg-curtain-left z-20 flex flex-col justify-between p-4 border-r-2 border-[#d4af37] shadow-[15px_0_35px_rgba(0,0,0,0.5)]"
+                transition={{ duration: 1.2, ease: [0.77, 0, 0.175, 1] }}
+                className="absolute top-0 left-0 bottom-0 w-1/2 bg-[#faf6ee] z-20 shadow-[inset_-15px_0_25px_rgba(0,0,0,0.03)] overflow-hidden border-r border-[#c59e47]/30"
               >
-                <div className="h-full flex items-center justify-end pr-3 opacity-30">
-                  <span className="text-[10px] uppercase tracking-[0.55em] text-[#7a5818] [writing-mode:vertical-rl] rotate-180 font-serif font-bold">
-                    Usman &amp; Fatima
-                  </span>
+                {/* Floating gold particles */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                  {[...Array(4)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="absolute w-1.5 h-1.5 rounded-full bg-[#d4af37] shadow-[0_0_10px_#d4af37] opacity-60"
+                      style={{ top: `${15 + (i * 20)}%`, left: `${20 + (i * 15)}%` }}
+                    />
+                  ))}
                 </div>
+                {/* Left Panel Double Borders */}
+                <div className="absolute inset-y-2 left-2 right-0 border-t-2 border-b-2 border-l-2 border-[#c59e47]/70 pointer-events-none rounded-l-sm" />
+                <div className="absolute inset-y-3.5 left-3.5 right-0 border-t border-b border-l border-[#c59e47]/40 pointer-events-none rounded-l-sm" />
+
+                {/* Top-Left Floral Corner */}
+                <svg className="absolute -top-3 -left-3 w-36 h-36 text-[#4a6b4d]/25 pointer-events-none" viewBox="0 0 140 140" fill="currentColor">
+                  <path d="M0,0 Q60,15 95,95 Q15,60 0,0 Z" fillOpacity="0.12" />
+                  <path d="M0,0 C30,10 60,35 85,85" fill="none" stroke="currentColor" strokeWidth="2" />
+                  <path d="M25,12 C38,5 48,16 40,28 C30,30 20,20 25,12 Z" />
+                  <path d="M12,25 C5,38 16,48 28,40 C30,30 20,20 12,25 Z" />
+                  <path d="M48,28 C62,20 72,34 62,46 C52,50 42,40 48,28 Z" />
+                  <path d="M28,48 C20,62 34,72 46,62 C50,52 40,42 28,48 Z" />
+                  <circle cx="42" cy="18" r="3" fill="#d4af37" fillOpacity="0.9" />
+                  <circle cx="18" cy="42" r="3" fill="#d4af37" fillOpacity="0.9" />
+                </svg>
+
+                {/* Bottom-Left Floral Corner */}
+                <svg className="absolute -bottom-3 -left-3 w-36 h-36 text-[#4a6b4d]/25 -scale-y-100 pointer-events-none" viewBox="0 0 140 140" fill="currentColor">
+                  <path d="M0,0 Q60,15 95,95 Q15,60 0,0 Z" fillOpacity="0.12" />
+                  <path d="M0,0 C30,10 60,35 85,85" fill="none" stroke="currentColor" strokeWidth="2" />
+                  <path d="M25,12 C38,5 48,16 40,28 C30,30 20,20 25,12 Z" />
+                  <path d="M12,25 C5,38 16,48 28,40 C30,30 20,20 12,25 Z" />
+                  <circle cx="42" cy="18" r="3" fill="#d4af37" fillOpacity="0.9" />
+                  <circle cx="18" cy="42" r="3" fill="#d4af37" fillOpacity="0.9" />
+                </svg>
               </motion.div>
 
-              {/* Right Royal Curtain */}
+              {/* Right Sliding Panel (Right Envelope Flap) */}
               <motion.div
                 initial={{ x: "0%" }}
                 animate={{ x: isOpen ? "100%" : "0%" }}
                 exit={{ x: "100%" }}
-                transition={{ duration: 1.4, ease: [0.77, 0, 0.175, 1] }}
-                className="absolute top-0 right-0 bottom-0 w-1/2 bg-curtain-right z-20 flex flex-col justify-between p-4 border-l-2 border-[#d4af37] shadow-[-15px_0_35px_rgba(0,0,0,0.5)]"
+                transition={{ duration: 1.2, ease: [0.77, 0, 0.175, 1] }}
+                className="absolute top-0 right-0 bottom-0 w-1/2 bg-[#faf6ee] z-20 shadow-[inset_15px_0_25px_rgba(0,0,0,0.03)] overflow-hidden border-l border-[#c59e47]/30"
               >
-                <div className="h-full flex items-center justify-start pl-3 opacity-30">
-                  <span className="text-[10px] uppercase tracking-[0.55em] text-[#7a5818] [writing-mode:vertical-rl] font-serif font-bold">
-                    Nikkah Invitation
-                  </span>
+                {/* Floating gold particles */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                  {[...Array(4)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="absolute w-1.5 h-1.5 rounded-full bg-[#d4af37] shadow-[0_0_10px_#d4af37] opacity-60"
+                      style={{ top: `${20 + (i * 20)}%`, right: `${20 + (i * 15)}%` }}
+                    />
+                  ))}
                 </div>
+                {/* Right Panel Double Borders */}
+                <div className="absolute inset-y-2 left-0 right-2 border-t-2 border-b-2 border-r-2 border-[#c59e47]/70 pointer-events-none rounded-r-sm" />
+                <div className="absolute inset-y-3.5 left-0 right-3.5 border-t border-b border-r border-[#c59e47]/40 pointer-events-none rounded-r-sm" />
+
+                {/* Top-Right Floral Corner */}
+                <svg className="absolute -top-3 -right-3 w-36 h-36 text-[#4a6b4d]/25 -scale-x-100 pointer-events-none" viewBox="0 0 140 140" fill="currentColor">
+                  <path d="M0,0 Q60,15 95,95 Q15,60 0,0 Z" fillOpacity="0.12" />
+                  <path d="M0,0 C30,10 60,35 85,85" fill="none" stroke="currentColor" strokeWidth="2" />
+                  <path d="M25,12 C38,5 48,16 40,28 C30,30 20,20 25,12 Z" />
+                  <path d="M12,25 C5,38 16,48 28,40 C30,30 20,20 12,25 Z" />
+                  <path d="M48,28 C62,20 72,34 62,46 C52,50 42,40 48,28 Z" />
+                  <path d="M28,48 C20,62 34,72 46,62 C50,52 40,42 28,48 Z" />
+                  <circle cx="42" cy="18" r="3" fill="#d4af37" fillOpacity="0.9" />
+                  <circle cx="18" cy="42" r="3" fill="#d4af37" fillOpacity="0.9" />
+                </svg>
+
+                {/* Bottom-Right Floral Corner */}
+                <svg className="absolute -bottom-3 -right-3 w-36 h-36 text-[#4a6b4d]/25 -scale-x-100 -scale-y-100 pointer-events-none" viewBox="0 0 140 140" fill="currentColor">
+                  <path d="M0,0 Q60,15 95,95 Q15,60 0,0 Z" fillOpacity="0.12" />
+                  <path d="M0,0 C30,10 60,35 85,85" fill="none" stroke="currentColor" strokeWidth="2" />
+                  <path d="M25,12 C38,5 48,16 40,28 C30,30 20,20 25,12 Z" />
+                  <path d="M12,25 C5,38 16,48 28,40 C30,30 20,20 12,25 Z" />
+                  <circle cx="42" cy="18" r="3" fill="#d4af37" fillOpacity="0.9" />
+                  <circle cx="18" cy="42" r="3" fill="#d4af37" fillOpacity="0.9" />
+                </svg>
               </motion.div>
 
-              {/* Center Content on Top of Curtains */}
+              {/* Center Content */}
               <motion.div 
-                exit={{ opacity: 0, scale: 0.85, transition: { duration: 0.4 } }}
-                className="absolute inset-0 z-30 flex flex-col items-center justify-between py-10 px-6 pointer-events-none"
+                exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.4 } }}
+                className="absolute inset-0 z-30 flex flex-col items-center justify-between py-12 px-8 pointer-events-none"
               >
-                {/* Top Bismillah with extended breathing gap */}
-                <div className="pt-4 text-center">
-                  <span className="font-arabic text-[#8f681a] text-3xl sm:text-4xl font-bold block drop-shadow-md">
+                <div className="pt-4 text-center space-y-2.5">
+                  <span className="font-arabic text-[#8f681a] text-3xl sm:text-4xl font-bold block drop-shadow-sm">
                     بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
                   </span>
-                  <p className="text-[10px] uppercase tracking-[0.45em] text-[#6e5015] font-bold mt-5">
-                    Nikkah Ceremony
-                  </p>
-                </div>
-
-                {/* Center Seal & Title */}
-                <div className="my-auto text-center space-y-4">
-                  <CurtainGoldMedallion />
-                  
-                  <div className="pt-2">
-                    <h2 className="text-2xl font-serif text-[#291e0a] tracking-widest font-bold">
-                      {WEDDING_DATA.groom} <span className="font-script text-3xl text-[#9c751e]">&amp;</span> {WEDDING_DATA.bride}
-                    </h2>
-                    <p className="text-[10px] uppercase tracking-[0.3em] text-[#705218] mt-1 font-semibold">
-                      Friday • 25 Dec 2026
-                    </p>
+                  <div className="flex items-center justify-center gap-3">
+                    <span className="h-[1px] w-8 bg-[#c59e47]/60" />
+                    <span className="text-[9px] uppercase tracking-[0.4em] text-[#705218] font-semibold">
+                      The Wedding Celebration
+                    </span>
+                    <span className="h-[1px] w-8 bg-[#c59e47]/60" />
                   </div>
                 </div>
 
-                {/* Bottom Callout */}
+                <CleanFloatingLogo />
+
                 <motion.div
-                  animate={{ y: [0, -5, 0] }}
+                  animate={{ y: [0, -4, 0] }}
                   transition={{ repeat: Infinity, duration: 2 }}
-                  className="py-3.5 px-8 rounded-full border-2 border-[#c59e47] bg-[#ffffff]/90 shadow-[0_8px_25px_rgba(0,0,0,0.2)] flex items-center gap-2.5"
+                  className="py-3 px-8 rounded-full border-2 border-[#c59e47] bg-white shadow-[0_8px_25px_rgba(197,158,71,0.25)] flex items-center gap-2.5 pointer-events-auto"
                 >
-                  <span className="text-xs text-[#a67c2e]">❖</span>
+                  <span className="text-xs text-[#a67c2e]">✦</span>
                   <span className="text-xs uppercase tracking-[0.25em] font-bold text-[#45320c]">
-                    Tap to open curtains
+                    Tap to Open Invitation
                   </span>
-                  <span className="text-xs text-[#a67c2e]">❖</span>
+                  <span className="text-xs text-[#a67c2e]">✦</span>
                 </motion.div>
               </motion.div>
             </motion.div>
@@ -289,11 +324,10 @@ export default function RoyalCurtainNikkahInvite() {
         </AnimatePresence>
 
         {/* =========================================================================
-            PHASE 2: FULLSCREEN STORYBOOK INVITATION (BEHIND CURTAINS)
+            PHASE 2: FULLSCREEN STORYBOOK INVITATION (BEHIND COVER)
             ========================================================================= */}
         <div className="relative w-full h-full">
           
-          {/* Floating Audio Control */}
           <button 
             onClick={toggleMusic}
             aria-label="Toggle Sound"
@@ -310,7 +344,6 @@ export default function RoyalCurtainNikkahInvite() {
             )}
           </button>
 
-          {/* Snap Scrolling Container */}
           <div className="w-full h-full overflow-y-auto snap-container scrollbar-none">
 
             {/* -------------------------------------------------------------
@@ -319,25 +352,22 @@ export default function RoyalCurtainNikkahInvite() {
             <section className="w-full snap-card flex flex-col items-center justify-between py-6 px-4 relative bg-[#faf6ee] text-center overflow-hidden">
               <LuxuryRoyalBackground />
 
-              {/* Header with Substantial Gap Below Bismillah */}
               <motion.div 
                 initial={{ y: -15, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8 }}
                 className="pt-2 z-10"
               >
-                {/* Bismillah Calligraphy */}
                 <span className="font-arabic text-3xl sm:text-4xl text-[#a87d27] block font-bold leading-tight drop-shadow-[0_1px_3px_rgba(168,125,39,0.25)]">
                   بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
                 </span>
 
-                {/* Announcement Lines with 3-Line Parents Layout */}
                 <div className="mt-4 sm:mt-5 flex flex-col items-center">
                   <p className="text-[11px] sm:text-xs uppercase tracking-[0.28em] text-[#7a6850] font-semibold">
                     {WEDDING_DATA.parents.father}
                   </p>
                   
-                  <span className="font-script text-base sm:text-lg text-[#b88c34] my-[-2px] select-none">
+                  <span className="font-signature text-3xl sm:text-4xl text-[#b88c34] my-[-6px] select-none font-normal">
                     &amp;
                   </span>
                   
@@ -351,10 +381,8 @@ export default function RoyalCurtainNikkahInvite() {
                 </div>
               </motion.div>
 
-              {/* Arch Container */}
               <div className="relative w-full max-w-[340px] h-[340px] my-auto flex items-center justify-center z-10 -my-2">
                 
-                {/* Fallback Vector Ring */}
                 <svg 
                   className="absolute inset-0 w-full h-full text-[#527357]/20 pointer-events-none" 
                   viewBox="0 0 200 200" 
@@ -371,7 +399,6 @@ export default function RoyalCurtainNikkahInvite() {
                   ))}
                 </svg>
 
-                {/* Floating Botanical Wreath PNG */}
                 <motion.img 
                   src="/arch.png" 
                   alt=""
@@ -387,7 +414,6 @@ export default function RoyalCurtainNikkahInvite() {
                   onError={(e) => { (e.currentTarget as HTMLElement).style.display = "none"; }}
                 />
 
-                {/* Refined Couple Names (Usman & Fatima) */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -398,7 +424,7 @@ export default function RoyalCurtainNikkahInvite() {
                     {WEDDING_DATA.groom}
                   </h1>
                   
-                  <span className="font-script text-xl sm:text-2xl text-[#b88c34] my-[-3px] drop-shadow-sm select-none">
+                  <span className="font-signature text-4xl sm:text-5xl text-[#b88c34] my-[-8px] drop-shadow-sm select-none font-normal">
                     &amp;
                   </span>
                   
@@ -408,7 +434,6 @@ export default function RoyalCurtainNikkahInvite() {
                 </motion.div>
               </div>
 
-              {/* Bottom Quran Card with Refined & Scaled-Down Typography */}
               <motion.div 
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -416,20 +441,16 @@ export default function RoyalCurtainNikkahInvite() {
                 className="w-full max-w-[310px] z-10 pb-1"
               >
                 <div className="p-3 rounded-lg bg-[#ffffff]/95 border border-[#e2d0a8] shadow-sm space-y-1.5 backdrop-blur-[2px]">
-                  {/* Arabic Ayat (Scaled down & elegant) */}
                   <p className="font-arabic text-xs sm:text-[13px] text-[#8f681c] font-bold leading-relaxed" dir="rtl">
                     {WEDDING_DATA.quranVerseArabic}
                   </p>
 
-                  {/* Subtle Gold Divider */}
                   <div className="w-10 h-[1px] bg-gradient-to-r from-transparent via-[#c59e47] to-transparent mx-auto opacity-70" />
 
-                  {/* English Translation (Scaled down & proportionate) */}
                   <p className="text-[9.5px] sm:text-[10px] text-[#4a3b2c] font-serif tracking-wide leading-relaxed font-medium px-1">
                     {WEDDING_DATA.quranVerseEnglish}
                   </p>
 
-                  {/* Reference */}
                   <span className="text-[7.5px] uppercase tracking-[0.25em] text-[#a07c30] block font-mono font-semibold pt-0.5">
                     — {WEDDING_DATA.surahRef} —
                   </span>
@@ -495,13 +516,16 @@ export default function RoyalCurtainNikkahInvite() {
             <section className="w-full snap-card flex flex-col items-center justify-center p-6 bg-[#faf6ee] relative overflow-hidden">
               <LuxuryRoyalBackground />
 
-              <div className="w-full max-w-xs space-y-5 z-10">
+              <div className="w-full max-w-xs space-y-3 z-10">
                 <div className="text-center">
-                  <span className="text-[9px] uppercase tracking-[0.35em] text-[#8e7132] font-semibold block">Program Schedule</span>
-                  <h3 className="text-2xl font-serif text-[#292015] font-semibold mt-1">The Order of Events</h3>
+                  <span className="text-[9px] uppercase tracking-[0.35em] text-[#8e7132] font-semibold block mb-0.5">Program Schedule</span>
+                  
+                  <h3 className="font-signature text-6xl sm:text-[68px] text-[#a87f28] leading-none py-1 drop-shadow-sm select-none">
+                    Order Of Events
+                  </h3>
                 </div>
 
-                <div className="relative pl-6 border-l-2 border-[#c59e47]/60 space-y-4 ml-2">
+                <div className="relative pl-6 border-l-2 border-[#c59e47]/60 space-y-4 ml-2 mt-2">
                   {WEDDING_DATA.itinerary.map((item, idx) => (
                     <motion.div 
                       key={idx}
@@ -566,7 +590,7 @@ export default function RoyalCurtainNikkahInvite() {
               </motion.div>
 
               <footer className="pb-2 space-y-0.5 z-10">
-                <p className="font-serif text-[#7d5e1e] text-sm tracking-widest font-semibold">Usman &amp; Fatima</p>
+                <p className="font-signature text-3xl text-[#7d5e1e] font-normal">Usman &amp; Fatima</p>
                 <p className="text-[9px] tracking-[0.35em] text-[#80705a] uppercase font-medium">25 • 12 • 2026</p>
               </footer>
             </section>

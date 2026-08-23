@@ -4,15 +4,13 @@
   --font-serif: var(--font-cinzel), Georgia, serif;
   --font-sans: var(--font-montserrat), sans-serif;
   --font-arabic: var(--font-amiri), serif;
-  --font-script: var(--font-script), cursive;
 }
 
-html, body {
-  background-color: #faf6ee; /* Match invitation theme so no black gaps appear */
+body {
+  background-color: #faf6ee;
+  color: #2b241b;
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
   overflow-x: hidden;
   font-family: var(--font-montserrat), sans-serif;
 }
@@ -25,31 +23,19 @@ html, body {
   font-family: var(--font-amiri), serif !important;
 }
 
-.font-script {
-  font-family: var(--font-script), cursive !important;
+.font-signature {
+  font-family: "Birthstone Bounce", "Pinyon Script", "Mea Culpa", cursive !important;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
-/* Curtain Textures */
+/* Modern Minimalist Sliding Panels */
 .bg-curtain-left {
-  background: linear-gradient(
-    90deg,
-    #ebdcc7 0%,
-    #f8eee0 25%,
-    #d9c5ab 50%,
-    #fcf6ee 75%,
-    #ceb698 100%
-  );
+  background: #faf6ee;
 }
 
 .bg-curtain-right {
-  background: linear-gradient(
-    270deg,
-    #ebdcc7 0%,
-    #f8eee0 25%,
-    #d9c5ab 50%,
-    #fcf6ee 75%,
-    #ceb698 100%
-  );
+  background: #faf6ee;
 }
 
 /* Fluid Snap Scrolling */
@@ -66,7 +52,6 @@ html, body {
   height: 100dvh;
 }
 
-/* Hide scrollbars */
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
