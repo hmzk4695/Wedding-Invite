@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #f3ede3;
+  background-color: #1a1612;
   color: #2b241b;
   margin: 0;
   padding: 0;
@@ -28,7 +28,41 @@ body {
   font-family: var(--font-script), cursive !important;
 }
 
-/* Hide scrollbars for clean mobile frame presentation */
+/* Luxury Silk/Velvet Curtain Fold Texture */
+.bg-curtain-left {
+  background: linear-gradient(
+    90deg,
+    #ebdcc7 0%,
+    #f8eee0 25%,
+    #d9c5ab 50%,
+    #fcf6ee 75%,
+    #ceb698 100%
+  );
+}
+
+.bg-curtain-right {
+  background: linear-gradient(
+    270deg,
+    #ebdcc7 0%,
+    #f8eee0 25%,
+    #d9c5ab 50%,
+    #fcf6ee 75%,
+    #ceb698 100%
+  );
+}
+
+/* Snap Scrolling */
+.snap-container {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.snap-card {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Hide scrollbars */
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
