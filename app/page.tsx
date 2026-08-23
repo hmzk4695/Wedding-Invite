@@ -18,7 +18,7 @@ const WEDDING_DATA = {
     mapLink: "https://share.google/xRvJ2S7T7uqPUmNWV",
   },
   
-  musicUrl: "https://actions.google.com/sounds/v1/ambiences/daytime_forest_bonfire.ogg",
+  musicUrl: "/music.mp3",
 
   quranVerseArabic: "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
   quranVerseEnglish: "“And among His signs is that He created for you mates from among yourselves, that you may find peace in them; and He placed between you affection and mercy.”",
