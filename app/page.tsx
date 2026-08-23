@@ -299,7 +299,7 @@ export default function RoyalCurtainNikkahInvite() {
                   <div className="flex items-center justify-center gap-3">
                     <span className="h-[1px] w-8 bg-[#c59e47]/60" />
                     <span className="text-[9px] uppercase tracking-[0.4em] text-[#705218] font-semibold">
-                      The Wedding Celebration
+                      Nikkah Ceremony
                     </span>
                     <span className="h-[1px] w-8 bg-[#c59e47]/60" />
                   </div>
