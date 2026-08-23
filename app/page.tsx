@@ -8,7 +8,7 @@ const WEDDING_DATA = {
   groom: "Usman",
   bride: "Fatima",
   parents: {
-    father: "Muhammad Yousuf Khan",
+    father: "Muhammad Yousuf Khan (LATE)",
     mother: "Kishwer Jahan",
   },
   dateISO: "2026-12-25T17:00:00",

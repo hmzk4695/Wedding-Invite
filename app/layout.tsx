@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cinzel, Montserrat, Amiri } from "next/font/google";
 import "./globals.css";
 
+
 const cinzel = Cinzel({
   subsets: ["latin"],
   variable: "--font-cinzel",
@@ -25,7 +26,22 @@ const amiri = Amiri({
 
 export const metadata: Metadata = {
   title: "Usman & Fatima | Royal Nikkah Invitation",
-  description: "Cordially inviting you to celebrate the Nikkah ceremony of Usman and Fatima.",
+  description: "You are cordially invited to celebrate the Nikkah ceremony of Usman & Fatima.",
+  openGraph: {
+    title: "Usman & Fatima's Nikkah Invitation",
+    description: "Friday, December 25, 2026 at Civil Aviation Club, Karachi.",
+    url: "https://your-vercel-link.vercel.app",
+    siteName: "Wedding Invitation",
+    images: [
+      {
+        url: "/logo.png", // Or a preview image of your invitation
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export const viewport: Viewport = {
@@ -59,4 +75,6 @@ export default function RootLayout({
       </body>
     </html>
   );
+  
+  
 }
