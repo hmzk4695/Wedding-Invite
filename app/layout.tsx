@@ -1,20 +1,34 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Cinzel, Montserrat, Amiri, Alex_Brush } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const cinzel = Cinzel({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-cinzel",
+  weight: ["400", "500", "600", "700"],
 });
 
-const playfair = Playfair_Display({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-montserrat",
+  weight: ["300", "400", "500", "600"],
+});
+
+const amiri = Amiri({
+  subsets: ["arabic"],
+  variable: "--font-amiri",
+  weight: ["400", "700"],
+});
+
+const alexBrush = Alex_Brush({
+  subsets: ["latin"],
+  variable: "--font-script",
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
-  title: "Wedding Invitation | Julian & Sophia",
-  description: "Save the date and join us for our special day.",
+  title: "Nikkah of Fatima & Usman",
+  description: "The Royal Wedding Celebration of Fatima & Usman — 25th December 2026",
 };
 
 export default function RootLayout({
@@ -23,8 +37,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="antialiased bg-[#121612] font-sans">{children}</body>
+    <html lang="en" className={`${cinzel.variable} ${montserrat.variable} ${amiri.variable} ${alexBrush.variable}`}>
+      <body className="antialiased font-sans bg-[#f3ede3] text-[#2b241b] selection:bg-[#c59e47]/30">{children}</body>
     </html>
   );
 }

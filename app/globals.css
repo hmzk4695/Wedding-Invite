@@ -1,19 +1,34 @@
 @import "tailwindcss";
 
 :root {
-  --font-serif: "Playfair Display", Georgia, serif;
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: var(--font-cinzel), Georgia, serif;
+  --font-sans: var(--font-montserrat), sans-serif;
+  --font-arabic: var(--font-amiri), serif;
+  --font-script: var(--font-script), cursive;
 }
 
 body {
-  background-color: #121612;
-  color: #E6E8E6;
+  background-color: #f3ede3;
+  color: #2b241b;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: var(--font-montserrat), sans-serif;
 }
 
-/* Hide scrollbars for clean mobile view */
+.font-serif {
+  font-family: var(--font-cinzel), Georgia, serif !important;
+}
+
+.font-arabic {
+  font-family: var(--font-amiri), serif !important;
+}
+
+.font-script {
+  font-family: var(--font-script), cursive !important;
+}
+
+/* Hide scrollbars for clean mobile frame presentation */
 .scrollbar-none::-webkit-scrollbar {
   display: none;
 }
