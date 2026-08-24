@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "Wedding Invitation",
     images: [
       {
-        url: "/logo.png", // Or a preview image of your invitation
+        url: "/thumbnail-nikkah.jpg", // Or a preview image of your invitation
         width: 800,
         height: 600,
       },
